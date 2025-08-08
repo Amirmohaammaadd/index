@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --spacing-sidebar-width: 300px;
+  --spacing-header-width: 64px;
+}
+
+@font-face {
+  font-family: "IRANSansX-Medium";
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/IRANSansX-Medium.woff2") format("woff");
+}
+
+* {
+  direction: rtl;
+  font-family: "IRANSansX-Medium";
+}
