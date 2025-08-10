@@ -15,5 +15,5 @@
 
 * {
   direction: rtl;
-  font-family: "IRANSansX-Medium";
+  font-family: "IRANSansX-Medium" !important; 
 }

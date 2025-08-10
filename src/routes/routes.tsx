@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import {  Route, Routes } from "react-router-dom"
 import HomePage from "../pages/Home"
 import TestPage from "../pages/Test"
 import ProductsPage from "../pages/Products"
@@ -28,7 +28,6 @@ export const AppRouter = () => {
             )}
 
             <Route path="/crud">
-
                 {crudRoutes.map((item) =>
                     <Route key={item.id} path={item.path} element={item.component} />
                 )}

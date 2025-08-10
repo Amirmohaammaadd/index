@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import { type ComponentProps } from "react";
 
 type AppInputProps = ComponentProps<"input"> & {
     label?: string;
@@ -11,9 +11,9 @@ const AppInput = ({ label, error, className, ...rest }: AppInputProps) => {
             {label && <label className="mb-2 font-medium text-gray-700">{label}</label>}
 
             <input
+                type={"text"}
                 {...rest}
-                type="text"
-                className={`border px-3 py-2 rounded-md text-sm outline-none transition-all ${error ? "border-red-500" : "border-gray-300"
+                className={`border px-3 w-full py-2 bg-slate-200 rounded-md text-sm outline-none transition-all ${error ? "border-red-500" : "border-gray-300"
                     } ${className}`}
             />
 
