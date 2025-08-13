@@ -1,12 +1,10 @@
 import { BrowserRouter } from "react-router-dom"
-import ContainerComp from "./components/Container/Container"
-import HeaderComp from "./components/Header/header"
-import SidebarComp from "./components/Sidebar/sidebar"
 import { ContextWrapper } from "./context/sidebar-context"
 import { ThemeContext } from "./context/theme-context"
-import { AppRouter } from "./routes/routes"
+// import { AppRouter } from "./routes/1/routes"
 import { Toaster } from 'react-hot-toast';
-
+import { AuthProvider } from "./context/auth-context"
+import { SecondAppRouter } from "./routes/2/routes";
 
 function App() {
 
@@ -15,15 +13,17 @@ function App() {
 
       <ThemeContext>
         <ContextWrapper>
+          <AuthProvider>
 
-          <ContainerComp>
-            <AppRouter />
-            <HeaderComp />
-            <SidebarComp />
-          </ContainerComp>
+            {/* way 1 - routing  */}
+            {/* <AppRouter /> */}
 
-          <Toaster />
+            {/* way 2 - routing  */}
+            <SecondAppRouter />
 
+            <Toaster />
+
+          </AuthProvider>
         </ContextWrapper>
       </ThemeContext>
 

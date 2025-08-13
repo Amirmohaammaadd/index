@@ -3,12 +3,16 @@ import { type ComponentProps } from "react";
 type AppInputProps = ComponentProps<"input"> & {
     label?: string;
     error?: string;
+    hasStar?: boolean
 };
 
-const AppInput = ({ label, error, className, ...rest }: AppInputProps) => {
+const AppInput = ({ label, error, className, hasStar, ...rest }: AppInputProps) => {
     return (
-        <div className="flex flex-col gap-1 w-[300px]">
-            {label && <label className="mb-2 font-medium text-gray-700">{label}</label>}
+        <div className="flex flex-col gap-1 w-full">
+            {label && <label className="mb-2 font-medium text-gray-700">
+                {hasStar && <span className="text-red-500 ml-2">*</span>}
+                {label}
+            </label>}
 
             <input
                 type={"text"}

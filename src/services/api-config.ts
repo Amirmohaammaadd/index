@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const privateApi = axios.create({
   //   baseURL: import.meta.env.VITE_API_BASE_URL || "URL",
-  baseURL: "https://fakestoreapi.com",
+  baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
@@ -12,7 +12,7 @@ const privateApi = axios.create({
 
 // privateApi.interceptors.request.use(
 //   (config) => {
-//     const token = localStorage.getItem("accessMytoken");
+//     const token = localStorage.getItem("token");
 //     if (token) {
 //       config.headers.Authorization = `Bearer ${token}`;
 //     }
@@ -22,7 +22,7 @@ const privateApi = axios.create({
 // );
 
 privateApi.interceptors.response.use(
-  (response) => response.data,
+  (response) => response,
   (error) => {
     const res = error.response;
 

@@ -65,7 +65,7 @@ const RhfCrudPage = () => {
     return (
         <div className="h-full flex flex-col gap-4 justify-center items-center">
 
-            <form onSubmit={handleSubmit(getData)} className="space-y-5">
+            <form onSubmit={handleSubmit(getData)} className="space-y-5 w-1/2 lg:w-1/4">
 
                 <AppInput
                     error={errors.username?.message}

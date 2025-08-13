@@ -1,18 +1,24 @@
 import { useState, type ComponentProps } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+
 
 type AppPasswordInputProps = ComponentProps<"input"> & {
     label?: string;
     error?: string;
+    hasStar?: boolean
 };
 
-const AppPasswordInput = ({ label, error, className, ...rest }: AppPasswordInputProps) => {
+const AppPasswordInput = ({ label, error, className, hasStar, ...rest }: AppPasswordInputProps) => {
 
     const [showPassword, setShowPassword] = useState(false);
 
 
     return (
-        <div className="flex flex-col gap-1 w-[300px]">
-            {label && <label className="mb-2 font-medium text-gray-700">{label}</label>}
+        <div className="flex flex-col gap-1 w-full">
+            {label && <label className="mb-2 font-medium text-gray-700">
+                {hasStar && <span className="text-red-500 ml-2">*</span>}
+
+                {label}</label>}
 
             <div className="relative">
                 <input
@@ -23,12 +29,14 @@ const AppPasswordInput = ({ label, error, className, ...rest }: AppPasswordInput
                         } ${className}`}
                 />
 
+
+
                 <button
                     type="button"
                     onClick={() => setShowPassword((prev) => !prev)}
                     className="absolute cursor-pointer left-2 top-1/2 -translate-y-1/2 text-sm text-gray-600"
                 >
-                    {showPassword ? "%" : "$"}
+                    {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
                 </button>
             </div>
 
