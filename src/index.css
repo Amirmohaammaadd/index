@@ -14,6 +14,17 @@
 }
 
 * {
-  direction: rtl;
   font-family: "IRANSansX-Medium" !important; 
+}
+
+.scroll-wrapper {
+  direction: ltr; /* اسکرول سمت راست */
+  overflow: auto;
+  height: 200px; /* یا هر ارتفاعی که می‌خوای */
+  z-index: 1000
+}
+
+.content-rtl {
+  direction: rtl; /* محتوای راست به چپ */
+  z-index: 1000
 }

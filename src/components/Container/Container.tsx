@@ -9,7 +9,7 @@ const ContainerComp = ({ children }: { children: ReactNode }) => {
 
     return (
         <main className={theme}>
-            <div className='dark:bg-[#121212] bg-slate-50 ransition-colors duration-300 dark:text-white fixed top-0 left-0 w-full h-screen overflow-y-auto md:pr-sidebar-width pt-header-width'>
+            <div className='dark:bg-[#121212] z-50 overflow-y-auto bg-slate-50 my-10 ransition-colors duration-300 dark:text-white fixed top-0 left-0 w-full h-[calc(100vh-60px)] md:pr-sidebar-width mt-header-width'>
                 {children}
                 <HeaderComp />
                 <SidebarComp />

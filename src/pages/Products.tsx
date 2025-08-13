@@ -28,10 +28,9 @@ const ProductsPage = () => {
     useEffect(() => {
         getProductsApiCall()
     }, [])
-
     return (
 
-        <div className="flex flex-col justify-center items-center p-3 pt-10">
+        <div className="flex flex-col justify-center items-center p-3 py-10" >
             <div className="grid grid-cols-4 gap-x-14 gap-y-10 ">
 
                 {loading ?

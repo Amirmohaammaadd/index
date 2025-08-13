@@ -22,7 +22,7 @@ const SidebarComp = () => {
     const [openA, setOpenA] = useState(false)
 
     return (
-        <section className={`bg-white shadow-xl dark:bg-[#353535] ransition-colors md:right-0 fixed w-sidebar-width h-screen top-0 transition-discrete duration-500
+        <section className={`bg-white shadow-xl dark:bg-[#353535] left-0 ransition-colors md:right-0 fixed w-sidebar-width h-screen top-0 transition-discrete duration-500
              md:block ${showSidebar ? "right-0" : "-right-full"} `}>
 
             <Button className="md:!hidden" onClick={() => setShowSidebar((prv) => !prv)}>
