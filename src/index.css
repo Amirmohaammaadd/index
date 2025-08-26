@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --spacing-sidebar-width: 300px;
+  --spacing-header-width: 64px;
+}
+
+@font-face {
+  font-family: "IRANSansX-Medium";
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/IRANSansX-Medium.woff2") format("woff");
+}
+
+* {
+  font-family: "IRANSansX-Medium" ;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+  height: 6px;
+
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #808092b6;
+}
