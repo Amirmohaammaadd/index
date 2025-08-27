@@ -3,7 +3,7 @@ import AppInput from "../ui-components/app-input";
 import AppPasswordInput from "../ui-components/app-password-input";
 import AppButton from "../ui-components/app-button";
 import axios from "axios";
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/auth-context";
 import dev_1 from '../../src/assets/pics/dev-1.jpg'
@@ -23,10 +23,6 @@ const LoginPage = () => {
 
     const { handleSubmit, register, formState: { errors } } = useForm<LoginUserData>()
     const [loading, setLoading] = useState(false)
-
-    useLayoutEffect(() => {
-        localStorage.clear()
-    }, [])
 
     const loginApiCall = async (data: LoginUserData) => {
 

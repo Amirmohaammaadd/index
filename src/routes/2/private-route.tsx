@@ -3,7 +3,10 @@ import { useAuth } from "../../context/auth-context";
 
 const PrivateRoutes = () => {
 
-    const { isLoggedIn } = useAuth();        
+    const { isLoggedIn } = useAuth();
+    
+    
+    
 
     return isLoggedIn ? <Outlet /> : <Navigate to={'/login'} replace={true} />;
 }
