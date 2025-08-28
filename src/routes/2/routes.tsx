@@ -1,9 +1,8 @@
-import { Route, Routes, useNavigate } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import ContainerComp from "../../components/Container/Container"
-import React, { Suspense, useEffect } from "react"
+import React, { Suspense } from "react"
 import LoginPage from "../../pages/login";
 import PrivateRoutes from "./private-route";
-import { useAuth } from "../../context/auth-context";
 
 const LazyHomePage = React.lazy(() => import('../../pages/Home'));
 const LazyProductsPage = React.lazy(() => import('../../pages/Products'));
@@ -35,16 +34,6 @@ const LoadingFallback = () => {
 
 export const SecondAppRouter = () => {
 
-    
-    const navigate = useNavigate()
-
-    const { isLoggedIn } = useAuth()
-
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate("/home", { replace: true });
-        }
-    }, [])
 
     return (
         <Routes>

@@ -3,11 +3,12 @@ import AppInput from "../ui-components/app-input";
 import AppPasswordInput from "../ui-components/app-password-input";
 import AppButton from "../ui-components/app-button";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/auth-context";
 import dev_1 from '../../src/assets/pics/dev-1.jpg'
 import svgLogo from '../../src/assets/pics/1.svg'
+import { useNavigate } from "react-router";
 
 type LoginUserData = {
     password: string,
@@ -19,34 +20,40 @@ type LoginUserData = {
 
 const LoginPage = () => {
 
-    const { login } = useAuth();
-
-    const { handleSubmit, register, formState: { errors } } = useForm<LoginUserData>()
     const [loading, setLoading] = useState(false)
 
-    const loginApiCall = async (data: LoginUserData) => {
 
+    const { login, isLoggedIn, isLoadingAuth } = useAuth();
+    const navigate = useNavigate();
+
+    const { handleSubmit, register, formState: { errors } } = useForm<LoginUserData>();
+
+    useEffect(() => {
+        if (!isLoadingAuth && isLoggedIn) {
+            navigate("/home", { replace: true });
+        }
+    }, [isLoadingAuth, isLoggedIn, navigate]);
+
+    const loginApiCall = async (data: LoginUserData) => {
         try {
             setLoading(true)
-            const response = await axios.post("https://api.escuelajs.co/api/v1/auth/login",
-                {
-                    email: data.username,
-                    password: data.password
-                }
-            )
-            if (response.status === 201) {
-                login(response.data.access_token);
+            const res = await axios.post("https://api.escuelajs.co/api/v1/auth/login", {
+                email: data.username,
+                password: data.password
+            });
+            if (res.status === 201) {
+                login(res.data.access_token);
+                navigate("/home", { replace: true });
             }
-
-        } catch (error) {
-
-            console.log(error);
-            toast.error("خطا در برقراری ارتباط با سرور")
-
+        } catch {
+            toast.error("خطا در برقراری ارتباط با سرور");
         } finally {
             setLoading(false)
+
         }
-    }
+    };
+
+    if (isLoadingAuth || isLoggedIn) return null;
 
     return (
 

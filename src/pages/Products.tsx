@@ -48,7 +48,7 @@ const ProductsPage = () => {
                     </> :
                     <>
                         {productData.map((product) =>
-                            <div className="w-[300px] bg-white p-3 shadow-lg rounded-md flex flex-col gap-5">
+                            <div key={product.id} className="w-[300px] bg-white p-3 shadow-lg rounded-md flex flex-col gap-5">
                                 <img
                                     src={product.images[0]}
                                     alt={product.title}

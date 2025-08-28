@@ -18,8 +18,8 @@ function App() {
             {/* way 1 - routing  */}
             {/* <AppRouter /> */}
 
-            {/* way 2 - routing  */}
-            <SecondAppRouter />
+            {/* way 2 - routing // better one */}
+            <SecondAppRouter /> 
 
             <Toaster />
 
