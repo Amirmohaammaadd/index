@@ -59,3 +59,41 @@ privateApi.interceptors.response.use(
 );
 
 export default privateApi;
+
+
+// -----------------------------------------------
+
+// const authInterceptor = (req) => {
+//   const accessToken = JSON.parse(localStorage.getItem("profile"))?.accessToken;
+//   if (accessToken) {
+//     req.headers.Authorization = `Bearer ${accessToken}`;
+//   }
+//   return req;
+// };
+
+// const adminAuthInterceptor = (req) => {
+//   const accessToken = JSON.parse(localStorage.getItem("admin"))?.accessToken;
+//   if (accessToken) {
+//     req.headers.Authorization = `Bearer ${accessToken}`;
+//   }
+//   return req;
+// };
+
+// export const API = axios.create({
+//   baseURL: BASE_URL,
+// });
+
+// export const ADMIN_API = axios.create({
+//   baseURL: ADMIN_URL,
+// });
+
+// export const COMMUNITY_API = axios.create({
+//   baseURL: BASE_URL,
+// });
+
+// API.interceptors.request.use(authInterceptor);
+// ADMIN_API.interceptors.request.use(adminAuthInterceptor);
+// COMMUNITY_API.interceptors.request.use((req) => {
+//   req.headers["Content-Type"] = "application/json";
+//   return authInterceptor(req);
+// });
