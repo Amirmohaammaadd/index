@@ -5,27 +5,35 @@ import { ThemeContext } from "./context/theme-context"
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from "./context/auth-context"
 import { SecondAppRouter } from "./routes/2/routes";
+import { Provider } from 'react-redux'
+import { store } from "./store/store";
 
 function App() {
 
   return (
     <BrowserRouter>
 
-      <ThemeContext>
-        <ContextWrapper>
-          <AuthProvider>
+      {/* ---- RTK ---- */}
+      <Provider store={store}>
 
-            {/* way 1 - routing  */}
-            {/* <AppRouter /> */}
 
-            {/* way 2 - routing // better one */}
-            <SecondAppRouter /> 
+        <ThemeContext>
+          <ContextWrapper>
+            <AuthProvider>
 
-            <Toaster />
+              {/* way 1 - routing  */}
+              {/* <AppRouter /> */}
 
-          </AuthProvider>
-        </ContextWrapper>
-      </ThemeContext>
+              {/* way 2 - routing // better one */}
+              <SecondAppRouter />
+
+              <Toaster />
+
+            </AuthProvider>
+          </ContextWrapper>
+        </ThemeContext>
+
+      </Provider>,
 
     </BrowserRouter>
 

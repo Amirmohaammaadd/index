@@ -1,8 +1,20 @@
-const TestPage = () => {
-    return (<>
+import { useSelector } from "react-redux";
+import type { RootState } from "../store/store";
 
-        TestPage
-    </>);
+const TestPage = () => {
+
+    const name = useSelector((state: RootState) => state.user.name);
+
+    return (
+        <>
+            <div className="p-5">
+                <h1>صفحه نمایش</h1>
+                <p>اسم وارد شده: {name}</p>
+            </div>
+
+            {/* TestPage */}
+        </>
+    );
 }
 
 export default TestPage;

@@ -17,8 +17,9 @@ const AppInput = ({ label, error, className, hasStar, ...rest }: AppInputProps) 
             <input
                 type={"text"}
                 {...rest}
-                className={`border px-3 w-full py-2 bg-slate-200 rounded-md text-sm outline-none transition-all ${error ? "border-red-500" : "border-gray-300"
-                    } ${className}`}
+                className={`border px-3 w-full py-2 bg-slate-200 rounded-md text-sm outline-none transition-all 
+                    ${error ? "border-red-500" : "border-gray-300"} 
+                    ${className}`}
             />
 
             {error && <span className="text-xs text-red-500">{error}</span>}
