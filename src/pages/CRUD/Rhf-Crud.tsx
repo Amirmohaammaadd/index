@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
-import AppInput from "../ui-components/app-input";
-import AppButton from "../ui-components/app-button";
-import AppPasswordInput from "../ui-components/app-password-input";
+import AppInput from "@ui-components/app-input";
+import AppButton from "@ui-components/app-button";
+import AppPasswordInput from "@ui-components/app-password-input";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-type UserData = {
+type UserDataProps = {
     username: string
     password: string
     // isActive: boolean
@@ -16,10 +16,10 @@ type UserData = {
 }
 
 const RhfCrudPage = () => {
-    const { handleSubmit, register, formState: { errors }, reset } = useForm<UserData>()
+    const { handleSubmit, register, formState: { errors }, reset } = useForm<UserDataProps>()
     const [loading, setLoading] = useState(false)
 
-    const [userData, setUserData] = useState<UserData>({
+    const [userData, setUserData] = useState<UserDataProps>({
         password: "",
         username: "",
         // isActive: false,
@@ -28,7 +28,7 @@ const RhfCrudPage = () => {
         // email: ""
     })
 
-    const getData = (data: UserData) => {
+    const getData = (data: UserDataProps) => {
         setUserData({
             username: data.username,
             password: data.password,
@@ -39,10 +39,16 @@ const RhfCrudPage = () => {
         })
     }
 
+    useEffect(() => {
+        console.log(userData)
+    }, [userData])
+
+    // ------------------------------------------------
+
     const getUserApiCall = async () => {
         try {
             setLoading(true);
-            const response = await axios.get<UserData>("https://fakestoreapi.com/users/1");
+            const response = await axios.get<UserDataProps>("https://fakestoreapi.com/users/1");
             reset({
                 // password: response.data.password,
                 // username: response.data.username
@@ -56,10 +62,6 @@ const RhfCrudPage = () => {
             setLoading(false);
         }
     };
-
-    useEffect(() => {
-        console.log(userData)
-    }, [userData])
 
 
     return (

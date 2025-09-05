@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import AppInput from "../ui-components/app-input";
-import AppPasswordInput from "../ui-components/app-password-input";
-import AppButton from "../ui-components/app-button";
+import AppInput from "@ui-components/app-input";
+import AppPasswordInput from "@ui-components/app-password-input";
+import AppButton from "@ui-components/app-button";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -88,7 +88,7 @@ const LoginPage = () => {
                 <img src={dev_1} className="size-full" />
             </div>
         </div>
-    );
+    )
 }
 
 export default LoginPage;

@@ -1,9 +1,9 @@
 import { Button, ConfigProvider, Form, Input, Segmented, Select } from "antd";
 import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
-import { Rules } from "../constant/Rules";
-import { city, province, segmentValue } from "../constant/Data";
-import { getUserApiCall } from "../services/crud-services";
+import { Rules } from "../../constant/Rules";
+import { city, province, segmentValue } from "../../constant/Data";
+import { getUserApiCall } from "../../services/crud-services";
 
 type UserData = {
     userName: string

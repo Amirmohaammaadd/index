@@ -7,9 +7,9 @@ import PrivateRoutes from "./private-route";
 const LazyHomePage = React.lazy(() => import('../../pages/Home'));
 const LazyProductsPage = React.lazy(() => import('../../pages/Products'));
 const LazyTestPage = React.lazy(() => import('../../pages/Test'));
-const LazyAntdCrudPage = React.lazy(() => import('../../pages/Antd-Crud'));
-const LazyRhfCrudPage = React.lazy(() => import('../../pages/Rhf-Crud'));
-const LazyMixedCrudPage = React.lazy(() => import('../../pages/Mixed-Crud'));
+const LazyAntdCrudPage = React.lazy(() => import('../../pages/CRUD/Antd-Crud'));
+const LazyRhfCrudPage = React.lazy(() => import('../../pages/CRUD/Rhf-Crud'));
+const LazyMixedCrudPage = React.lazy(() => import('../../pages/CRUD/Mixed-Crud'));
 
 const allRoutes = [
     { id: 1, path: '/home', name: "Home", faName: "خانه", component: <LazyHomePage /> },

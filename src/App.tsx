@@ -33,7 +33,7 @@ function App() {
           </ContextWrapper>
         </ThemeContext>
 
-      </Provider>,
+      </Provider>
 
     </BrowserRouter>
 

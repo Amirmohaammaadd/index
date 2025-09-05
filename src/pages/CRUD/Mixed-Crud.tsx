@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import { Controller, useForm } from "react-hook-form";
-import AppButton from "../ui-components/app-button";
+import AppButton from "@ui-components/app-button";
 
 type UserData = {
     username: string

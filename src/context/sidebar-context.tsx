@@ -11,10 +11,11 @@ export const ContextWrapper = ({ children }: { children: ReactNode }) => {
 
     const [showSidebar, setShowSidebar] = useState(false)
 
-    return <myContext.Provider value={{
-        showSidebar,
-        setShowSidebar
-    }}>
+    return <myContext.Provider
+        value={{
+            showSidebar,
+            setShowSidebar
+        }}>
         {children}
     </myContext.Provider>
 }

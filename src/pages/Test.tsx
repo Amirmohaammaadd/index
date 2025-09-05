@@ -6,14 +6,10 @@ const TestPage = () => {
     const name = useSelector((state: RootState) => state.user.name);
 
     return (
-        <>
-            <div className="p-5">
-                <h1>صفحه نمایش</h1>
-                <p>اسم وارد شده: {name}</p>
-            </div>
-
-            {/* TestPage */}
-        </>
+        <div className="p-5">
+            <h1>صفحه نمایش</h1>
+            <p>اسم وارد شده: {name}</p>
+        </div>
     );
 }
 
