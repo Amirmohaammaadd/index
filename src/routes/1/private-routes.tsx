@@ -8,6 +8,7 @@ const LazyTestPage = React.lazy(() => import('../../pages/Test'));
 const LazyAntdCrudPage = React.lazy(() => import('../../pages/CRUD/Antd-Crud'));
 const LazyRhfCrudPage = React.lazy(() => import('../../pages/CRUD/Rhf-Crud'));
 const LazyMixedCrudPage = React.lazy(() => import('../../pages/CRUD/Mixed-Crud'));
+const SearchProductsPage = React.lazy(() => import('../../pages/Search-produt'));
 
 const pricateRoutes = [
     { id: 1, path: '/', name: "Home", faName: "خانه", component: <LazyHomePage /> },
@@ -18,6 +19,8 @@ const pricateRoutes = [
     { id: 5, path: '/crud/antd-crud', name: "antd-crud", faName: "Antd-CRUD", component: <LazyAntdCrudPage /> },
     { id: 6, path: '/crud/rhf-crud', name: "antd-crud", faName: "Rhf-CRUD", component: <LazyRhfCrudPage /> },
     { id: 7, path: '/crud/mixed-crud', name: "mixed-crud", faName: "Mixed-CRUD", component: <LazyMixedCrudPage /> },
+    { id: 8, path: '/search-products', name: "Search-Products", faName: "Search-Products", component: <SearchProductsPage /> },
+
 ]
 
 const LoadingFallback = () => {

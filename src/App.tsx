@@ -7,33 +7,50 @@ import { AuthProvider } from "./context/auth-context"
 import { SecondAppRouter } from "./routes/2/routes";
 import { Provider } from 'react-redux'
 import { store } from "./store/store";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 function App() {
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+        // gcTime: 0
+      }
+    }
+  })
 
   return (
     <BrowserRouter>
 
-      {/* ---- RTK ---- */}
-      <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
 
 
-        <ThemeContext>
-          <ContextWrapper>
-            <AuthProvider>
+        {/* ---- RTK ---- */}
+        <Provider store={store}>
 
-              {/* way 1 - routing  */}
-              {/* <AppRouter /> */}
 
-              {/* way 2 - routing // better one */}
-              <SecondAppRouter />
+          <ThemeContext>
+            <ContextWrapper>
+              <AuthProvider>
 
-              <Toaster />
+                {/* way 1 - routing  */}
+                {/* <AppRouter /> */}
 
-            </AuthProvider>
-          </ContextWrapper>
-        </ThemeContext>
+                {/* way 2 - routing // better one */}
+                <SecondAppRouter />
 
-      </Provider>
+                <Toaster />
+
+              </AuthProvider>
+            </ContextWrapper>
+          </ThemeContext>
+
+        </Provider>
+      </QueryClientProvider>
 
     </BrowserRouter>
 

@@ -9,6 +9,7 @@ export const routesObj = [
     { id: 1, path: '/home', name: "Home", faName: "خانه", },
     { id: 2, path: '/products', name: "Products", faName: "محصولات", },
     { id: 3, path: '/test', name: "Test", faName: "تست", },
+    { id: 4, path: '/search-products', name: "Products-srch", faName: "سرچ محصولات", },
 ]
 
 export const crudRoutes = [

@@ -10,6 +10,7 @@ const LazyTestPage = React.lazy(() => import('../../pages/Test'));
 const LazyAntdCrudPage = React.lazy(() => import('../../pages/CRUD/Antd-Crud'));
 const LazyRhfCrudPage = React.lazy(() => import('../../pages/CRUD/Rhf-Crud'));
 const LazyMixedCrudPage = React.lazy(() => import('../../pages/CRUD/Mixed-Crud'));
+const SearchProductsPage = React.lazy(() => import('../../pages/Search-produt'));
 
 const allRoutes = [
     { id: 1, path: '/home', name: "Home", faName: "خانه", component: <LazyHomePage /> },
@@ -18,10 +19,11 @@ const allRoutes = [
     { id: 5, path: '/crud/antd-crud', name: "antd-crud", faName: "Antd-CRUD", component: <LazyAntdCrudPage /> },
     { id: 6, path: '/crud/rhf-crud', name: "antd-crud", faName: "Rhf-CRUD", component: <LazyRhfCrudPage /> },
     { id: 7, path: '/crud/mixed-crud', name: "mixed-crud", faName: "Mixed-CRUD", component: <LazyMixedCrudPage /> },
+    { id: 8, path: '/search-products', name: "Search-Products", faName: "Search-Products", component: <SearchProductsPage /> },
     { id: 4, path: '*', name: "Notfound", faName: "Notfound", component: <div className="flex items-center justify-center h-full text-3xl pb-10">404 Notfound</div> },
 ]
 
-const LoadingFallback = () => {
+export const LoadingFallback = () => {
     return (
         <div className="h-full flex items-center justify-center">
             <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
