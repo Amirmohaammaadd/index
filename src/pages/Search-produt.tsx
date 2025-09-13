@@ -45,6 +45,7 @@ const SearchProducts = () => {
     const { data: products, isLoading } = useQuery({
         queryKey: ["products", filterValue],
         queryFn: () => fetchProducts(filterValue),
+        staleTime: 5000
     });
 
     const handleFilterChange = (_: any, values: FilterData) => {
